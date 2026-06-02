@@ -16,13 +16,13 @@ An intelligent web app built with **Streamlit** that generates multiple types of
 ## 🚀 Demo
 
 Upload any image and instantly get AI-generated captions in multiple styles.
-## 🚀 Demo
 
-Upload any image and instantly get AI-generated captions in multiple styles.
----
 ### 📸 App Preview
 
-![App Screenshot](assets/demo.png)
+<p align="center">
+  <img src="assets/demo.png" width="700"/>
+</p>
+
 ---
 
 ## 🛠️ Tech Stack
@@ -37,15 +37,15 @@ Upload any image and instantly get AI-generated captions in multiple styles.
 ## 📂 Project Structure
 
 ```
-caption_generating_app/
+ai-caption-generator/
 │
-├── app.py               # Main Streamlit app
-├── requirements.txt    # Dependencies
-├── README.md           # Project documentation
+├── app.py
+├── requirements.txt
+├── README.md
 ├── .gitignore
-└── .env                # (Not uploaded) API key storage
-├── assets/                # 📸 Images
-│   ├── demo.png           # Main app screenshot
+│
+├── assets/
+│   └── demo.png
 ```
 
 ---
@@ -55,13 +55,13 @@ caption_generating_app/
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/Pawan-145/Caption-Generating-App.git
-cd caption_generating_app
+git clone https://github.com/yourusername/ai-caption-generator.git
+cd ai-caption-generator
 ```
 
 ---
 
-### 2. Create Virtual Environment (Optional but Recommended)
+### 2. Create Virtual Environment (Optional)
 
 ```
 python -m venv venv
@@ -79,19 +79,16 @@ pip install -r requirements.txt
 
 ---
 
-### 4. Set Up API Key 🔐
+## ▶️ Run Locally
 
-Create a `.env` file in the root directory:
+To run locally, you can still use environment variables:
 
 ```
-GEMINI_API_KEY=your_api_key_here
+export GEMINI_API_KEY=your_api_key_here   # Mac/Linux
+set GEMINI_API_KEY=your_api_key_here      # Windows
 ```
 
-> ⚠️ Never upload your `.env` file to GitHub.
-
----
-
-### 5. Run the App
+Then run:
 
 ```
 streamlit run app.py
@@ -99,11 +96,27 @@ streamlit run app.py
 
 ---
 
+## ☁️ Deployment (Streamlit Cloud)
+
+This app uses **Streamlit Secrets** for secure API key management.
+
+### Steps:
+
+1. Deploy your app on Streamlit Cloud
+2. Go to **App Settings → Secrets**
+3. Add:
+
+```toml
+GEMINI_API_KEY = "your_api_key_here"
+```
+
+---
+
 ## 🔑 Environment Variables
 
-| Variable         | Description                |
-| ---------------- | -------------------------- |
-| `GEMINI_API_KEY` | Your Google Gemini API key |
+| Variable       | Description                |
+| -------------- | -------------------------- |
+| GEMINI_API_KEY | Your Google Gemini API key |
 
 ---
 
@@ -111,14 +124,9 @@ streamlit run app.py
 
 1. User uploads an image
 2. Image is processed using PIL
-3. A structured prompt is sent to Gemini API
-4. AI generates:
-
-   * Formal caption
-   * Casual caption
-   * SEO caption
-   * Alt text
-5. Results are displayed in a styled UI
+3. Prompt is sent to Gemini API
+4. AI generates multiple caption styles
+5. Results are displayed in the UI
 
 ---
 
@@ -126,16 +134,15 @@ streamlit run app.py
 
 * Image preview before processing
 * Loading spinner during generation
-* Styled text output with improved readability
 * Clean and minimal interface
 
 ---
 
 ## 🔒 Security Best Practices
 
-* API keys are stored using environment variables
-* `.env` is excluded via `.gitignore`
-* No sensitive data is exposed in source code
+* API keys are stored securely using **Streamlit Secrets**
+* No secrets are exposed in the codebase
+* `.env` is not required for deployment
 
 ---
 
@@ -143,38 +150,18 @@ streamlit run app.py
 
 * 🌍 Multi-language captions
 * 🎯 Custom tone selection
+* 💾 Download captions
 * 📱 Mobile responsiveness
-* 💾 Download captions as file
-* 🧠 Image tagging & classification
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repo
-2. Create a new branch
-3. Make your changes
-4. Submit a pull request
-
----
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License
 
 ---
 
-## 🙌 Acknowledgements
-
-* Google Gemini AI
-* Streamlit community
-
----
-
-## 💡 Author
+## 🙌 Author
 
 Built by *Pawan Kumar Ray*
-
----
