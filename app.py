@@ -1,8 +1,6 @@
 from google import genai
 from PIL import Image
 import streamlit as st
-import os
-from dotenv import load_dotenv
 import time
 
 st.set_page_config(page_title="AI Caption Generator", layout="centered")
@@ -12,8 +10,7 @@ st.warning("Supported Image type: jpg, png, jpeg")
 
 uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "png", "jpeg"])
 
-load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = st.secrets["GEMINI_API_KEY"]
 client = genai.Client(api_key=api_key)
 
 if uploaded_file:
