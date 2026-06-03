@@ -55,7 +55,7 @@ ai-caption-generator/
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/Pawan-145/ai-caption-generator.git
+git clone https://github.com/Pawan-145/Caption-Generating-App.git
 cd ai-caption-generator
 ```
 
